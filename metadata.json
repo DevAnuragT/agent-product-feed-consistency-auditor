@@ -1,0 +1,42 @@
+{
+  "slug": "product-feed-consistency-auditor",
+  "title": "Product Feed Consistency Auditor",
+  "category": "commerce-data",
+  "description": "Checks product feed scan counts for missing identifiers, invalid prices, currency, and feed freshness.",
+  "decision": "Checks product feed scan counts for missing identifiers, invalid prices, currency, and feed freshness.",
+  "limitations": "Uses caller-declared evidence only; does not verify external systems, legal requirements, or real-world truth. Human review remains required.",
+  "inputs": "A JSON object containing the documented fields. Numeric thresholds are deterministic and visible in agent.py.",
+  "good": {
+    "missing_sku_count": 0,
+    "invalid_price_count": 0,
+    "currency": "USD",
+    "feed_age_hours": 2
+  },
+  "bad": {},
+  "rules": [
+    [
+      "missing_sku_count",
+      "missing SKU count",
+      "max",
+      0
+    ],
+    [
+      "invalid_price_count",
+      "invalid price count",
+      "max",
+      0
+    ],
+    [
+      "currency",
+      "feed currency",
+      "required",
+      null
+    ],
+    [
+      "feed_age_hours",
+      "feed age",
+      "max",
+      24
+    ]
+  ]
+}

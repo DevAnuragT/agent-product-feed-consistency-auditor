@@ -1,0 +1,11 @@
+spec_version: "0.1.0"
+name: product-feed-consistency-auditor
+version: 0.1.0
+description: "Checks product feed scan counts for missing identifiers, invalid prices, currency, and feed freshness."
+skills:
+  - product-feed-consistency-auditor-skill
+tools:
+  - audit-product-feed-consistency-auditor
+tags:
+  - commerce-data
+  - evidence-driven
